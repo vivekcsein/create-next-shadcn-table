@@ -57,7 +57,7 @@ export function DataTableRowActions<TData>({
         <DropdownMenuContent align="end" className="w-[200px]">
           <DropdownMenuLabel>Actions</DropdownMenuLabel>
           <DropdownMenuItem
-            onClick={() => navigator.clipboard.writeText(task.id)}
+            onClick={() => navigator.clipboard.writeText(task.id.toString())}
           >
             <Copy className="mr-2 h-4 w-4" />
             Copy Task ID
@@ -87,7 +87,7 @@ export function DataTableRowActions<TData>({
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>Labels</DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
-              <DropdownMenuRadioGroup value={task.label}>
+              <DropdownMenuRadioGroup value={task.assetSKU}>
                 {label_options.map((label) => (
                   <DropdownMenuRadioItem key={label.value} value={label.value}>
                     <label.icon className="w-4 h-4 mr-2" />
